@@ -57,4 +57,28 @@
 19. 组件错误处理：全局错误处理，局部错误处理，errorCaptured
     
 ## 组合式API Compositon API
-    
+1. 为什么使用组合式Compostion API而不使用选项式Optional API？区别和优劣
+2. 使用setup函数作为Compostion API的入口替代data,methods等选项
+3. ref()函数，在setup()函数中定义响应式数据，代替data，响应式数据也叫状态，在setup函数中需要使用.value，在模板中不需要
+4. reactive()函数，直接返回响应式数据，只支持对象和数组类型的数据，不需要使用.value，返回的是Proxy对象
+5. computed()函数，返回不带参数的回调函数，在回调函数中返回计算后的值，在setup函数中使用需要.value
+6. watch()函数，监听ref本身，监听回调函数返回的ref.value，监听对象中基本类型，监听对象类型的响应式熟悉，deep，访问修改前的对象类型响应式数据，子对象，浅拷贝，深拷贝，包括数组
+7. 同时监听多个响应式数据，分别监听或监听数组
+8. wathcEffect(),接收回调函数，变化再执行
+9. wtch()&watchEffect()清理收尾操作，onValidate()
+10. 传递和访问Props属性，无法使用this，直接使用props，setup函数的第一个参数
+11. 转换非响应性Props为响应性，使用toRefs()
+12. ref/reactive创建的数据在Props中的响应性，对象和数组可以保留响应性
+13. methods()直接在setup函数中定义函数方法
+14. emit自定义事件,setup函数的第二个参数
+15. 生命周期钩子
+16. Provide和Inject，全为函数，提供和访问响应式数据，使用ref或toRef,reactive
+17. 获取template ref
+18. 渲染函数：使用context中的slots属性
+19. attrs:获取非props属性
+20. Composables 最佳组件逻辑复用方式 推荐用use开头
+21. script setup defineProps()，Emit()编译器宏无需导入,useSlot(),useAttrs()
+
+## Vue与后台交互
+1. HTTP 客户端 请求 包括请求方式 路径与查询参数 HTTP版本 请求头 请求体 服务端 响应 HTTP版本 响应状态码 响应头 响应体
+2. Axios
